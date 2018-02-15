@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/signup', (req, res) => {
+router.get('/', (req, res) => {
     res.render('/signup')
 })
 
-router.post('/signup', (req, res) => {
+router.post('/', (req, res) => {
     const {username = null, password = null} = req.body
 
     if(!username || !password) return res.status(500).json(new Error('invalidate payload'))

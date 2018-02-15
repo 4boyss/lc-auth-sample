@@ -7,7 +7,6 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 require('./lib/init')
-const users = require('./routers/users')
 
 app.prepare()
 .then(() => {
@@ -19,7 +18,7 @@ app.prepare()
   server.use(require('./lib/middleware/nextRender')(app))
 
   // routers config below
-  server.use('/users', users)
+  server.use('/users/signup', require('./routers/usersSignup'))
 
   server.get('*', (req, res) => {
     return handle(req, res)
