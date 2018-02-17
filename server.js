@@ -15,7 +15,7 @@ app.prepare()
   // middleware init below
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: false }));
-  server.use(require('./lib/middleware/nextRender')(app))
+  server.use(require('./lib/middleware/renderEngine')(app))
 
   // routers config below
   server.use('/users/signup', require('./routers/usersSignup'))
