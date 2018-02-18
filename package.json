@@ -15,7 +15,10 @@
   "description": "This project was bootstrapped with [Create Next App](https://github.com/segmentio/create-next-app).",
   "version": "1.0.0",
   "main": "next.config.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^22.3.0",
+    "node-mocks-http": "^1.6.7"
+  },
   "author": "",
   "license": "ISC"
 }

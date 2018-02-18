@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const controller = require('./controller')
 
 router.get('/', (req, res) => {
     res.render('/signup')
@@ -13,20 +14,10 @@ router.get('/success', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    const {username = null, password = null} = req.body
+    const {username = null, password = null, email = null} = req.body
+    if((!username && !email) || !password) return res.status(500).json(new Error('invalidate payload'))
 
-    if(!username || !password) return res.status(500).json(new Error('invalidate payload'))
-
-    var user = new AV.User();
-    // user.setUsername(username)
-    // user.setPassword(password)
-    return user
-        .signUp({username, password})
-        .then(function (u) {
-            return res.json(u)
-        }, (err) => {
-            return res.status(500).json(new Error(err))
-        });
+    return (new controller(req, res)).validate()
 })
 
 module.exports = router
