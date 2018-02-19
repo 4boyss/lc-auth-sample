@@ -11,11 +11,11 @@ controller.prototype.validate = function(){
     const _u = username || email
 
     return new AV.User()
-        .signUp({username: _u, password})
+        .signUp({username: _u, password, email})
         .then((u) => {
             const message = 'You are very important to us, all information received will always remain confidential. We will contact you as soon as we review your message. \n\nPlease verify your email.'
-            const title = `Finished Signup ${_u}`
-            res.locals.data = {message, title}
+            const title = `Thx for signup ${_u}`
+            res.locals.data = {message, title, email}
             return res.render('/success')
         }, (err) => {
             return res.status(500).json(new Error(err))
