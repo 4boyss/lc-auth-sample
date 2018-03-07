@@ -6,15 +6,11 @@ export default class LoginForm extends React.Component {
   
     render () {
       return (
-        <form className="pure-form pure-form-stacked" action="/users/login" method="post">
+        <form className="pure-form pure-form-stacked" action="/users/signup" method="post">
             <fieldset  className="pure-group">
-                <legend> Please input validate email and password</legend>
+                <legend> Giving validate Email and Password and we keep it securious</legend>
                 <input className="pure-input-1-2" name="email" type="email" placeholder="Email" defaultValue="" />
                 <input className="pure-input-1-2" name="password" type="password" placeholder="Password" defaultValue="" />
-                <label htmlFor="remember">
-                    <input className="rmbCheckBox" id="remember" type="checkbox" />
-                    <span>Remember me</span>
-                </label>
                 <input type="submit" className="pure-button pure-button-primary" value="Submit" />
             </fieldset>
             <style jsx>{`

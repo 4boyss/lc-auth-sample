@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Signup from '../components/Signup.js'
+import LoginForm from '../components/LoginForm.js'
 import PropTypes from 'prop-types';
 
 
@@ -8,8 +8,8 @@ export default class signup extends React.Component {
     return (
       <div>
         <div className="formContainer">
-        <h1> Signup Page for example </h1>
-          <Signup />
+        <h1> Login Page for example </h1>
+          <LoginForm />
         </div>
         <style jsx>{`
           .formContainer {
